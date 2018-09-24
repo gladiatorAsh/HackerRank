@@ -16,8 +16,8 @@
 import java.util.*;
 
 public static  class QueueToStacks{
-    private Deque<Integer> inStack=new Array<Deque>();
-    private Deque<Integer> outStack=new Array<Deque>();
+    private Deque<Integer> inStack=new ArrayDeque<Integer>();
+    private Deque<Integer> outStack=new ArrayDeque<Integer>();
 
     public void enqueue(int item){
         inStack.push(item);
