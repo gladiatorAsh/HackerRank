@@ -1,3 +1,5 @@
+// ToDo: Will update winning logic to make it cleaner
+// Reorganize methods to make it more readable
 
 public class TicTacToe {
     public class Player{
@@ -40,7 +42,7 @@ public class TicTacToe {
                 board[i][j]=' ';
             }
         }
-
+                
         movesPresent=9;
         return true;
     }
