@@ -3,9 +3,8 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.text.*;
 
-/*
-  Implementation of the doomsday algorithm to find any day of the year from 1000-2300
-*/
+
+
 public class Solution {
     public static void main(String args[]) throws Exception {
 
@@ -50,7 +49,7 @@ public class Solution {
         System.out.println("Enter year");
         int year = input.nextInt();
 
-        System.out.println(month + " " + day + " " + year);
+        System.out.println("Day Input in mm/dd/yyyy : "+month + " " + day + " " + year);
         input.nextLine();
 
         if (day > 31 || month > 12 || year < 1000 || year > 2300) {
@@ -59,16 +58,16 @@ public class Solution {
 
         int index = map.get(year / 100);
 
-        int a = (year % 1000) / 12;
-        int b = (year % 1000) % 12;
+        int a = (year % 100) / 12; 
+        int b = (year % 100) % 12;
         int c = b / 4;
         int d = a + b + c;
 
         String doomsDay = dayweek[(index + d) % 7];
-        System.out.println("Doomsday:" + doomsDay);
+        //System.out.println("Doomsday:" + doomsDay);
 
         int extraDays = findDaysToNextDoomsDay(day, month, year);
-        int newIndex = (index + d - extraDays) % 7;
+        int newIndex = Math.floorMod(index + d - extraDays, 7);
         System.out.println(dayweek[newIndex]);
 
     }
@@ -102,7 +101,7 @@ public class Solution {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
-            System.out.println("Day difference: " + days);
+            //System.out.println("Day difference: " + days);
         }
         return days;
     }
