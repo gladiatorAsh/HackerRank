@@ -1,7 +1,6 @@
-# HackerRank
-## Hacker Rank Submissions
+#Preparation
 
-This is just a repository to store some of my HackerRank solutions.
+This is just a repository to store my progress related to preparing myself for interviews.
 
 
 
